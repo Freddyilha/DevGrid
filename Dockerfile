@@ -10,7 +10,8 @@ RUN apk update \
 WORKDIR /code
 
 COPY ./requirements.txt /code/requirements.txt
+COPY ./entrypoint.sh /
 
 RUN pip install --no-cache-dir --upgrade -r /code/requirements.txt
 
-CMD ["python","/code/app/app.py"]
+ENTRYPOINT ["/entrypoint.sh"]
