@@ -75,7 +75,7 @@ def store_weather(uid):
     return "Success"
 
 @app.route("/multiple", methods=['GET'])
-def store_multipe_weathers(uid):
+def store_multipe_weathersskl(uid):
     asyncio.get_event_loop().run_until_complete(multiple_tasks(CITIES_IDS))
 
     return "Success"
