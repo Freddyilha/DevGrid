@@ -1,3 +1,3 @@
-from database import db,User
+from app import db
 
 db.create_all()
