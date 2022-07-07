@@ -23,7 +23,7 @@ class User(db.Model):
 def home():
     return "Hello World!"
 
-def save_weather(uid):
+def save_weather(self, uid):
     url = f"https://api.openweathermap.org/data/2.5/weather?id={uid}&appid={API_KEY}"
     now = datetime.now()
 
@@ -42,7 +42,7 @@ def save_weather(uid):
 
 @app.route("/<int:uid>", methods=['GET'])
 def store_weather(uid):
-    save_weather(uid)
+    self.save_weather(uid)
     # background_tasks = set()
 
     # for i in range(10):
